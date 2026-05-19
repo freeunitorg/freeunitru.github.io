@@ -1,0 +1,250 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/ai-assistant-schema/main/schema.json",
+  "version": "1.0",
+  "info": {
+    "title": "FreeUnit — Сообщество LTS-форк сервера приложений Unit",
+    "description": "FreeUnit — это поддерживаемый сообществом форк сервера приложений Unit, изначально разработанного Nginx/F5. Оригинальный репозиторий был архивирован в октябре 2025 года. FreeUnit обеспечивает активные обновления безопасности, поддержку PHP 8.4/8.5 и интеграцию OpenTelemetry.",
+    "language": "ru",
+    "keywords": [
+      "сервер приложений unit",
+      "freeunit",
+      "форк nginx unit",
+      "php 8.5",
+      "сервер приложений",
+      "community lts",
+      "opentelemetry",
+      "веб-сервер",
+      "динамические приложения",
+      "php runtime",
+      "python приложения",
+      "go приложения",
+      "javascript приложения",
+      "unitd"
+    ],
+    "category": "Инструменты разработчика / Веб-серверы",
+    "license": "Apache-2.0",
+    "copyright": "FreeUnit Community"
+  },
+  "navigation": {
+    "main_sections": [
+      {
+        "id": "hero",
+        "name": "Введение",
+        "description": "Основное описание FreeUnit как сообщественного форка сервера приложений Unit",
+        "url": "https://freeunit.ru/#hero",
+        "importance": 1.0
+      },
+      {
+        "id": "why",
+        "name": "Почему FreeUnit",
+        "description": "Ключевые причины форка: поддержка PHP 8.4/8.5, бэкпорты безопасности, стабильные LTS-релизы, управление сообществом",
+        "url": "https://freeunit.ru/#why",
+        "importance": 0.95
+      },
+      {
+        "id": "install",
+        "name": "Установка",
+        "description": "Инструкции по сборке из исходников. Официальные пакеты и Docker-образы скоро.",
+        "url": "https://freeunit.ru/#install",
+        "importance": 0.9
+      },
+      {
+        "id": "opentelemetry",
+        "name": "Интеграция OpenTelemetry",
+        "description": "Нативная поддержка OpenTelemetry для сбора трассировок и телеметрии",
+        "url": "https://freeunit.ru/#opentelemetry",
+        "importance": 0.8
+      },
+      {
+        "id": "status",
+        "name": "Статус проекта",
+        "description": "Текущее состояние: активная разработка, создана GitHub-организация, PHP 8.5 работает, Docker-образы доступны",
+        "url": "https://freeunit.ru/#status",
+        "importance": 0.85
+      },
+      {
+        "id": "community",
+        "name": "Сообщество",
+        "description": "Ссылки на GitHub-обсуждения, баги, контактный email, руководство по вкладу",
+        "url": "https://freeunit.ru/#community",
+        "importance": 0.75
+      },
+      {
+        "id": "docs",
+        "name": "Документация",
+        "description": "Полная документация FreeUnit — установка, настройка, справочник API",
+        "url": "https://docs.freeunit.org/",
+        "importance": 0.95
+      },
+      {
+        "id": "telegram",
+        "name": "Telegram-сообщество",
+        "description": "Официальная Telegram-группа FreeUnit для чата и объявлений",
+        "url": "https://t.me/freeunit_support",
+        "importance": 0.7
+      }
+    ]
+  },
+  "key_concepts": [
+    {
+      "term": "FreeUnit",
+      "definition": "Сообщественный LTS-форк сервера приложений Unit, созданный после архивирования оригинального репозитория Nginx/F5 в октябре 2025 года.",
+      "url": "https://freeunit.ru/"
+    },
+    {
+      "term": "Сервер приложений Unit",
+      "definition": "Динамический сервер приложений, запускающий приложения на нескольких языках (PHP, Python, Go, JavaScript, Ruby, Java) с единой конфигурацией.",
+      "url": "https://freeunit.ru/"
+    },
+    {
+      "term": "unitd",
+      "definition": "Daemon-процесс сервера приложений Unit/FreeUnit.",
+      "url": "https://freeunit.ru/#install"
+    },
+    {
+      "term": "OpenTelemetry",
+      "definition": "Нативная интеграция в FreeUnit для сбора трассировок и телеметрических данных из приложений.",
+      "url": "https://freeunit.ru/#opentelemetry"
+    }
+  ],
+  "comparisons": [
+    {
+      "with": "nginx/unit",
+      "differences": [
+        "FreeUnit продолжает активную разработку (оригинал архивирован в окт. 2025)",
+        "FreeUnit добавляет поддержку PHP 8.4 и 8.5",
+        "FreeUnit включает интеграцию OpenTelemetry",
+        "FreeUnit управляется сообществом, а не корпорацией",
+        "FreeUnit обеспечивает активные бэкпорты безопасности"
+      ],
+      "similarities": [
+        "Та же базовая архитектура и API",
+        "Конфигурация через JSON REST API",
+        "Поддержка нескольких языков программирования",
+        "Лицензия Apache 2.0"
+      ]
+    },
+    {
+      "with": "nginx",
+      "differences": [
+        "Unit/FreeUnit — сервер приложений, а не прежде всего веб-сервер",
+        "Встроенные runtime-среды для динамических языков (PHP, Python и др.)",
+        "Не нужен отдельный PHP-FPM или uWSGI",
+        "Конфигурация динамическая через API, перезагрузка не нужна"
+      ],
+      "similarities": [
+        "Оба берут начало от Nginx Inc.",
+        "Высокопроизводительная событийно-ориентированная архитектура",
+        "Поддержка HTTP/HTTPS"
+      ]
+    },
+    {
+      "with": "Apache httpd + mod_php",
+      "differences": [
+        "Единая процессная модель против prefork/worker у Apache",
+        "Меньший объём памяти при большом числе соединений",
+        "Нет накладных расходов .htaccess",
+        "Динамическая реконфигурация без перезапуска"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Готов ли FreeUnit к продакшену?",
+      "answer": "Проект активен и успешно собирается с поддержкой PHP 8.5. Официальные пакеты и Docker-образы готовятся. Для продакшена рассмотрите сборку из исходников или дождитесь официальных релизов.",
+      "url": "https://freeunit.ru/#status"
+    },
+    {
+      "question": "Зачем создали FreeUnit?",
+      "answer": "Оригинальный репозиторий Unit был архивирован Nginx/F5 в октябре 2025 года с пометкой «Желателен новый мейнтейнер». FreeUnit — ответ сообщества: продолжить активную разработку, прежде всего ради поддержки PHP 8.4/8.5.",
+      "url": "https://freeunit.ru/"
+    },
+    {
+      "question": "Как установить FreeUnit?",
+      "answer": "В настоящее время — из исходников: git clone https://github.com/freeunitorg/freeunit, затем ./configure --openssl --otel, make, sudo make unitd-install. Официальные пакеты скоро.",
+      "url": "https://freeunit.ru/#install"
+    },
+    {
+      "question": "Поддерживает ли FreeUnit Docker?",
+      "answer": "Да, Docker-образы для FreeUnit 1.35.4 доступны. Смотрите GitHub-релизы.",
+      "url": "https://freeunit.ru/#status"
+    },
+    {
+      "question": "Какие языки программирования поддерживает FreeUnit?",
+      "answer": "Те же, что и оригинальный Unit: PHP (включая 8.4/8.5), Python, Go, JavaScript/Node.js, Ruby, Java, Perl. Дополнительные языковые модули собираются по необходимости.",
+      "url": "https://freeunit.ru/"
+    },
+    {
+      "question": "Совместим ли FreeUnit с конфигурацией оригинального Unit?",
+      "answer": "Да, FreeUnit поддерживает совместимость API с оригинальным Unit, поэтому существующие конфигурации должны работать без изменений.",
+      "url": "https://github.com/freeunitorg/freeunit"
+    }
+  ],
+  "structured_data": {
+    "software_version": "1.35.4",
+    "release_date": "Апрель 2026",
+    "repository": "https://github.com/freeunitorg/freeunit",
+    "license": "Apache-2.0",
+    "programming_languages_supported": [
+      "PHP 8.4",
+      "PHP 8.5",
+      "Python",
+      "Go",
+      "JavaScript/Node.js",
+      "Ruby",
+      "Java",
+      "Perl"
+    ],
+    "features": [
+      "Динамическая конфигурация через REST API",
+      "Нативная поддержка OpenTelemetry",
+      "Реконфигурация без простоя",
+      "Поддержка нескольких языков в одном процессе",
+      "TLS/SSL с OpenSSL",
+      "Раздача статических файлов",
+      "Возможности обратного прокси"
+    ],
+    "installation_methods": {
+      "source": "available",
+      "docker": "available",
+      "apt": "planned",
+      "yum": "planned",
+      "homebrew": "planned"
+    }
+  },
+  "ai_instructions": {
+    "summary_prompt": "FreeUnit — поддерживаемый сообществом форк сервера приложений Unit, созданный после архивирования оригинала Nginx/F5. Обеспечивает обновления безопасности, поддержку PHP 8.4/8.5 и интеграцию OpenTelemetry. Сейчас сборка из исходников; официальные пакеты скоро.",
+    "keywords_for_embedding": [
+      "freeunit",
+      "сервер приложений unit",
+      "nginx unit",
+      "форк сообщества",
+      "php 8.5",
+      "сервер приложений",
+      "динамические приложения",
+      "opentelemetry",
+      "lts",
+      "альтернатива веб-серверу",
+      "мультиязычный сервер приложений"
+    ],
+    "related_technologies": [
+      "nginx",
+      "apache",
+      "caddy",
+      "php-fpm",
+      "uwsgi",
+      "gunicorn",
+      "nodejs",
+      "opentelemetry",
+      "docker",
+      "kubernetes"
+    ],
+    "common_use_cases": [
+      "Запуск PHP-приложений на современном PHP 8.4/8.5",
+      "Мультиязычные микросервисы (Python, Go, PHP вместе)",
+      "Динамическое развёртывание приложений без перезагрузки",
+      "Хостинг приложений с поддержкой OpenTelemetry",
+      "Лёгкая альтернатива Apache + PHP-FPM"
+    ]
+  }
+}
